@@ -85,15 +85,26 @@ aside {
     row-gap: 2rem;
 }
 
-button {
+.btn-categoria {
     width: 100%;
     text-align: start;
     padding: 1rem;
     border: none;
-    background-color: #fff;
+    background-color: #ffffff8f;
     font-size: medium;
     border-radius: 5px 0px 0px 5px;
     cursor: pointer;
+    display: block;
+}
+a.btn-categoria {
+color: #000;
+}
+a.btn-categoria:hover {
+  color: #f0b62e;
+  }
+.btn-categoria.active{
+  background-color: #fff
+
 }
 
 .contendor-nav ul li {
@@ -110,7 +121,8 @@ button {
 
 
 /* ESTILO CONTENEDOR PRODUCTOS*/
-.contenedor-productos {
+.contenedor-productos,
+.contenedor-carrito {
     background-color: #fff;
     width: 80%;
     margin: 2rem 2rem 2rem 0rem;
@@ -155,11 +167,7 @@ button {
 /* ESTILO CARD PRODUCTOS */
 
 .producto {
-    --font-color: #323232;
-    --font-color-sub: #666;
-    --bg-color: #fff;
-    --main-color: #323232;
-    --main-focus: #2d8cf0;
+
     width: 230px;
     height: 300px;
     background: var(--bg-color);
@@ -179,14 +187,14 @@ button {
   }
   
   .producto-img {
-      /* clear and add new css */
+
     transition: all 0.5s;
     display: flex;
     justify-content: center;
   }
   
   .producto-img .img-destacada-producto {
-   /* delete */
+ 
 
   }
   
@@ -259,4 +267,55 @@ button {
   .btn-agregar-al-carrito:active {
     transform: translateY(3px);
   }
+
+  /*ESTILOS CARRITO*/
   
+.contenedor-datos-carrito {
+  margin: 2rem;
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+}
+.contenedor-grilla-carrito{
+  width: 70%;
+  padding: 1rem;
+}
+.columna-detalle-compra {
+  padding: 1rem;
+  width: 30%;
+  background-color: aqua;
+}
+.contenedor-titulo-item-carrito,
+.item-carrito{
+  display: flex;
+}
+
+.contenedor-titulo-item-carrito{
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #b59140;
+}
+.celda {
+  display: flex;
+
+  align-items: center;
+
+}
+
+.celda.s {
+  width: 10%;
+}
+.celda.m {
+  width: 20%;
+}
+.celda.l {
+  width: 30%;
+}
+.item-carrito{
+  border-radius: 10px;
+  background-color: #e9e9e9;
+}
+.item-carrito .celda{
+  padding: 1rem 0rem;
+ 
+}
