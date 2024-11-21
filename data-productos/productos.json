@@ -1,0 +1,90 @@
+[
+    {
+        "id": "combo01",
+        "nombre": "Combo Mega Delicia",
+        "precio": 25500,
+        "descripcion": "El combo perfecto para los que lo quieren todo: ¡hamburguesa, papas y bebida en un solo pack!",
+        "imagenDestacada": "../img/assets/combo01.png",
+        "categoria": {
+            "id": "combos",
+            "nombreCategoria": "Combos"
+        }
+    },
+    {
+        "id": "combo02",
+        "nombre": "Combo Doble Placer",
+        "precio": 17000,
+        "descripcion": "Ideal para compartir, con el doble de sabor en cada bocado. ¡Perfecto para una cita o entre amigos!",
+        "imagenDestacada": "../img/assets/combo02.png",
+        "categoria": {
+            "id": "combos",
+            "nombreCategoria": "Combos"
+        }
+    },
+    {
+        "id": "combo03",
+        "nombre": "Combo Familiar x4",
+        "precio": 32500,
+        "descripcion": "El combo completo para que nadie se quede con hambre. Cuatro porciones cargadas de sabor y buena compañía.",
+        "imagenDestacada": "../img/assets/combo03.png",
+        "categoria": {
+            "id": "combos",
+            "nombreCategoria": "Combos"
+        }
+    },
+    {
+        "id": "hamburguesa01",
+        "nombre": "Hamburguesa Clásica de la Casa",
+        "precio": 12500,
+        "descripcion": "La hamburguesa estrella, con ingredientes frescos y el sabor irresistible que nos distingue.",
+        "imagenDestacada": "../img/assets/hamburguesa01.png",
+        "categoria": {
+            "id": "para-comer",
+            "nombreCategoria": "Para Comer"
+        }
+    },
+    {
+        "id": "papas-fritas01",
+        "nombre": "Papas Fritas Crunchy",
+        "precio": 7200,
+        "descripcion": "Papas doradas y crujientes, servidas calientes y con el toque perfecto de sal. ¡Una explosión de sabor en cada bocado!",
+        "imagenDestacada": "../img/assets/papas-fritas01.png",
+        "categoria": {
+            "id": "para-picar",
+            "nombreCategoria": "Para Picar"
+        }
+    },
+    {
+        "id": "bebida01",
+        "nombre": "Gaseosa Refrescante",
+        "precio": 1500,
+        "descripcion": "La bebida burbujeante que acompaña todas tus comidas con el frescor que necesitas.",
+        "imagenDestacada": "../img/assets/bebida01.png",
+        "categoria": {
+            "id": "para-tomar",
+            "nombreCategoria": "Para Tomar"
+        }
+    },
+    {
+        "id": "cerveza01",
+        "nombre": "Cerveza Heineken Rubia 473ml",
+        "precio": 2500,
+        "descripcion": "Cerveza 100% malta. Su cepa de levadura tipo Lager es provista por Heineken (levadura A).",
+        "imagenDestacada": "../img/assets/cerveza.png",
+        "categoria": {
+            "id": "para-tomar",
+            "nombreCategoria": "Para Tomar"
+        }
+    },
+    {
+        "id": "pollo01",
+        "nombre": "Hamburguesa Clásica de Pollo",
+        "precio": 10500,
+        "descripcion": "Una hamburguesa que sabe de sensaciones. La textura del pollo hace un gran equipo con la suavidad de la mayonesa y un colchón de lechuga.",
+        "imagenDestacada": "../img/assets/pollo.png",
+        "categoria": {
+            "id": "para-comer",
+            "nombreCategoria": "Para Comer"
+        }
+    }
+]

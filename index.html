@@ -17,9 +17,13 @@
     <!--Hoja de Estilos-->
     <link rel="stylesheet" href="css/main.css">
     <!-- JAVASCRIPT-->
-    <script src="js/mainv2.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
-<body>
+
+<body id="body" class="noscroll">
     <div class="contenedor-aside">
         <aside>
             <header>
@@ -31,23 +35,29 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <button id="todos" class="btn-categoria active"><i class="bi bi-hand-index"></i> Todos Los
+                                    <button id="todos" class="btn-categoria active"><i class="bi bi-hand-index"></i>
+                                        Todos Los
                                         Productos</button>
                                 </li>
                                 <li>
-                                    <button id="para-comer" class="btn-categoria"><i class="bi bi-hand-index"></i> Para Comer</button>
+                                    <button id="para-comer" class="btn-categoria"><i class="bi bi-hand-index"></i> Para
+                                        Comer</button>
                                 </li>
                                 <li>
-                                    <button id="para-picar" class="btn-categoria"><i class="bi bi-hand-index"></i> Para Picar</button>
+                                    <button id="para-picar" class="btn-categoria"><i class="bi bi-hand-index"></i> Para
+                                        Picar</button>
                                 </li>
                                 <li>
-                                    <button id="para-tomar" class="btn-categoria"><i class="bi bi-hand-index"></i> Para Tomar</button>
+                                    <button id="para-tomar" class="btn-categoria"><i class="bi bi-hand-index"></i> Para
+                                        Tomar</button>
                                 </li>
                                 <li>
-                                    <button id="combos" class="btn-categoria"><i class="bi bi-hand-index"></i> Combos</button>
+                                    <button id="combos" class="btn-categoria"><i class="bi bi-hand-index"></i>
+                                        Combos</button>
                                 </li>
                                 <li>
-                                    <a class="btn-carrito" href="html/carrito.html"><i class="bi bi-bag-heart-fill"></i> Ver Carrito
+                                    <a class="btn-carrito" href="html/carrito.html"><i class="bi bi-bag-heart-fill"></i>
+                                        Ver Carrito
                                         <span class="productos-en-carrito" id="numerito-carrito">0</span></a>
                                 </li>
                             </ul>
@@ -70,7 +80,29 @@
         <div id="grilla-productos" class="contenedor-grilla-productos">
         </div>
     </div>
+
+    <!--PRELOADER-->
+    <div id="preloader" class="">
+
+        <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+            <div class="wheel"></div>
+            <div class="hamster">
+                <div class="hamster__body">
+                    <div class="hamster__head">
+                        <div class="hamster__ear"></div>
+                        <div class="hamster__eye"></div>
+                        <div class="hamster__nose"></div>
+                    </div>
+                    <div class="hamster__limb hamster__limb--fr"></div>
+                    <div class="hamster__limb hamster__limb--fl"></div>
+                    <div class="hamster__limb hamster__limb--br"></div>
+                    <div class="hamster__limb hamster__limb--bl"></div>
+                    <div class="hamster__tail"></div>
+                </div>
+            </div>
+            <div class="spoke"></div>
+        </div>
+    </div>
 </body>
 
 </html>
-
