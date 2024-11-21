@@ -1,4 +1,4 @@
-const url = './data-productos/productos.json';
+const url = 'data-productos/productos.json';
 
 let productos = [];
 
