@@ -1,4 +1,4 @@
-const url = '.data-productos/productos.json';
+const url = './data-productos/productos.json';
 
 let productos = [];
 
@@ -12,13 +12,17 @@ async function cargarProductosDesdeJSON() {
 
         cargarProductos(productos);
         asignarEventos();
-        paginaCarrito();
-        actualizarDetalleCompra();
+        
+        // Solo actualizar el detalle de compra si estamos en la página correcta
+        if (window.location.pathname === "/html/carrito.html") {
+            actualizarDetalleCompra();
+        }
 
     } catch (error) {
         console.error('Error al cargar los productos', error);
     }
 }
+
 
 function cargarProductos(productosSeleccionados) {
     const gridProductos = document.querySelector("#grilla-productos");
@@ -200,6 +204,8 @@ function eliminarDelCarrito(e) {
 
 function actualizarDetalleCompra() {
     const contenedorDetalleCompra = document.querySelector(".div-detalle-compra");
+    if (!contenedorDetalleCompra) return; // Verifica si el elemento existe
+    
     contenedorDetalleCompra.innerHTML = '';
 
     if (productosEnCarrito.length > 0) {
