@@ -1,4 +1,4 @@
-const url = 'https://api.jsonbin.io/v3/b/6740d20ead19ca34f8ce7df7';
+const url = './data-productos/productos.json';
 
 let productos = [];
 
@@ -6,23 +6,22 @@ async function cargarProductosDesdeJSON() {
     try {
         const respuesta = await fetch(url);
         if (!respuesta.ok) {
-            throw new Error('Error al cargar los productos');
+            throw new Error(`Error al cargar los productos`);
         }
-
-        const json = await respuesta.json();
-        console.log('Datos recibidos:', json); // Verifica aquí la estructura de los datos
-
-        const productos = json.record || json; // Cambia según si los datos están dentro de "record"
-        console.log('Productos procesados:', productos);
+        productos = await respuesta.json();
 
         cargarProductos(productos);
         asignarEventos();
+        
+        // Solo actualizar el detalle de compra si estamos en la página correcta
+        if (window.location.pathname === "/html/carrito.html") {
+            actualizarDetalleCompra();
+        }
+
     } catch (error) {
         console.error('Error al cargar los productos', error);
     }
 }
-
-
 
 
 function cargarProductos(productosSeleccionados) {
