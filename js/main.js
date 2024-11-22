@@ -6,22 +6,22 @@ async function cargarProductosDesdeJSON() {
     try {
         const respuesta = await fetch(url);
         if (!respuesta.ok) {
-            throw new Error(`Error al cargar los productos`);
+            throw new Error('Error al cargar los productos');
         }
-        productos = await respuesta.json();
 
-        console.log('Productos cargados:', productos); // Verifica los datos en la consola
+        const json = await respuesta.json();
+        console.log('Datos recibidos:', json); // Verifica aquí la estructura de los datos
+
+        const productos = json.record || json; // Cambia según si los datos están dentro de "record"
+        console.log('Productos procesados:', productos);
 
         cargarProductos(productos);
         asignarEventos();
-
-        if (window.location.pathname === "/html/carrito.html") {
-            actualizarDetalleCompra();
-        }
     } catch (error) {
         console.error('Error al cargar los productos', error);
     }
 }
+
 
 
 
