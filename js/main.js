@@ -1,4 +1,4 @@
-const url = './data-productos/productos.json';
+const url = 'https://api.jsonbin.io/v3/b/6740d20ead19ca34f8ce7df7';
 
 let productos = [];
 
