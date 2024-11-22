@@ -10,18 +10,19 @@ async function cargarProductosDesdeJSON() {
         }
         productos = await respuesta.json();
 
+        console.log('Productos cargados:', productos); // Verifica los datos en la consola
+
         cargarProductos(productos);
         asignarEventos();
-        
-        // Solo actualizar el detalle de compra si estamos en la página correcta
+
         if (window.location.pathname === "/html/carrito.html") {
             actualizarDetalleCompra();
         }
-
     } catch (error) {
         console.error('Error al cargar los productos', error);
     }
 }
+
 
 
 function cargarProductos(productosSeleccionados) {
