@@ -1,6 +1,4 @@
-const url = 'https://api.jsonbin.io/v3/b/6740d20ead19ca34f8ce7df7';
-
-let productos = [];
+const url = "https://api.jsonbin.io/v3/b/ABC123XYZ"; // Usa tu URL correcta
 
 async function cargarProductosDesdeJSON() {
     try {
@@ -10,51 +8,44 @@ async function cargarProductosDesdeJSON() {
         }
 
         const json = await respuesta.json();
-        console.log('Datos recibidos:', json); // Verifica aquí la estructura de los datos
+        console.log('Datos recibidos:', json); // Verifica que el array de productos aparece aquí
 
-        const productos = json.record || json; // Cambia según si los datos están dentro de "record"
-        console.log('Productos procesados:', productos);
+        const productos = json.record || json; // Ajusta según cómo devuelve JSONbin
 
         cargarProductos(productos);
-        asignarEventos();
     } catch (error) {
         console.error('Error al cargar los productos', error);
     }
 }
 
+function cargarProductos(productos) {
+    const contenedor = document.getElementById('productos');
+    if (!contenedor) {
+        console.error('El contenedor de productos no existe');
+        return;
+    }
 
+    contenedor.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos productos
 
-
-function cargarProductos(productosSeleccionados) {
-    const gridProductos = document.querySelector("#grilla-productos");
-    const tituloBanner = document.querySelector("#titulo-banner");
-
-    if (window.location.pathname === "/index.html") {
-        gridProductos.innerHTML = "";
-        productosSeleccionados.forEach(producto => {
-            let div = document.createElement("div");
-            div.classList.add("producto");
-            div.innerHTML = `
-                <div class="producto-img">
-                    <div class="img-destacada-producto">
-                        <img src="${producto.imagenDestacada}" alt="${producto.nombre}">
-                    </div>
-                </div>
-                <div class="titulo-producto">${producto.nombre}</div>
-                <div class="subtitulo-producto">${producto.descripcion}</div>
-                <hr class="divisor-producto">
-                <div class="footer-producto">
-                    <div class="precio-producto"><span>$</span> ${producto.precio}</div>
-                    <button class="btn-agregar-al-carrito" id="${producto.id}">
-                        <i class="bi bi-cart-plus-fill"></i>
-                    </button>
+    // Verifica que el array de productos no esté vacío
+    if (productos && productos.length > 0) {
+        productos.forEach(producto => {
+            const productoHTML = `
+                <div class="producto">
+                    <h3>${producto.nombre}</h3>
+                    <p>${producto.descripcion}</p>
+                    <p>Precio: $${producto.precio}</p>
                 </div>
             `;
-            gridProductos.append(div);
+            contenedor.innerHTML += productoHTML; // Agrega cada producto al contenedor
         });
+    } else {
+        contenedor.innerHTML = '<p>No se encontraron productos.</p>'; // Mensaje si no hay productos
     }
-    actualizarNumeroCarrito();
 }
+
+cargarProductosDesdeJSON();
+
 
 function asignarEventos() {
     const btnCategorias = document.querySelectorAll(".btn-categoria");
