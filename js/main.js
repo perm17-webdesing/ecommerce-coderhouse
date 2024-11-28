@@ -14,7 +14,7 @@ async function cargarProductosDesdeJSON() {
         asignarEventos();
         
         // Solo actualizar el detalle de compra si estamos en la página correcta
-        if (window.location.pathname === "/html/carrito.html") {
+        if (window.location.pathname.includes("/html/carrito.html")) {
             actualizarDetalleCompra();
         }
 
@@ -28,7 +28,7 @@ function cargarProductos(productosSeleccionados) {
     const gridProductos = document.querySelector("#grilla-productos");
     const tituloBanner = document.querySelector("#titulo-banner");
 
-    if (window.location.pathname === "/index.html") {
+    if (window.location.pathname.includes("/index.html") || window.location.pathname === "/") {
         gridProductos.innerHTML = "";
         productosSeleccionados.forEach(producto => {
             let div = document.createElement("div");
@@ -125,7 +125,7 @@ function actualizarNumeroCarrito() {
 function paginaCarrito() {
     const contenedorCarrito = document.querySelector("#contenedor-grilla-carrito");
 
-    if (window.location.pathname === "/html/carrito.html") {
+    if (window.location.pathname.includes("/html/carrito.html")) {
         contenedorCarrito.innerHTML = '';
         if (productosEnCarrito.length > 0) {
             productosEnCarrito.forEach(producto => {
@@ -352,9 +352,7 @@ function mostrarResumenCompra(datosPago) {
           
             localStorage.removeItem('productos-en-carrito');
             localStorage.removeItem('datosPago');
-            window.location.href = "/index.html";
+            window.location.href = "./index.html";
         }
     });
 }
-
-
